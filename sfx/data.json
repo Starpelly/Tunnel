@@ -1,0 +1,65 @@
+{
+  "series": "side",
+  "id": "tunnelEn",
+  "name": "Tunnel",
+  "language": "en",
+  "group": "Tunnel",
+  "groupDefault": true,
+  "objects": [
+    {
+      "type": "cue",
+      "id": "*/one",
+      "deprecatedIDs": [],
+      "name": "count in - one",
+      "duration": 1.0
+    },
+    {
+      "type": "cue",
+      "id": "*/two",
+      "deprecatedIDs": [],
+      "name": "count in - two",
+      "duration": 1.0
+    },
+    {
+      "type": "cue",
+      "id": "*/cowbell",
+      "deprecatedIDs": [],
+      "name": "cowbell",
+      "duration": 1.0
+    },
+    {
+      "type": "keepTheBeat",
+      "id": "*_onetwo",
+      "deprecatedIDs": [],
+      "name": "one, two!",
+      "defaultDuration": 2.0,
+      "cues": [
+        {
+          "id": "*/one",
+          "beat": 0.0
+        },
+        {
+          "id": "*/two",
+          "beat": 1.0
+        }
+      ]
+    },
+    {
+      "type": "keepTheBeat",
+      "id": "*_cowbell",
+      "deprecatedIDs": [],
+      "name": "cowbell",
+      "defaultDuration": 2.0,
+      "cues": [
+        {
+          "id": "*/cowbell",
+          "beat": 0.0
+        },
+        {
+          "id": "*/cowbell",
+          "beat": 1.0
+        }
+      ]
+    }
+  ]
+}
