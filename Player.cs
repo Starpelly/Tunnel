@@ -12,6 +12,9 @@ public class Player : MonoBehaviour
 
     public Conductor ConductorScript;
 
+    [SerializeField]
+    public bool canInput;
+
     private void Start()
     {
         Animator anim = GetComponent<Animator>();
@@ -19,10 +22,13 @@ public class Player : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (canInput == true)
         {
-            anim.Play("playertap");
-            OnTap();
+            if (Input.GetMouseButtonDown(0))
+            {
+                anim.Play("playertap", -1, 0);
+                OnTap();
+            }
         }
 
         if (ConductorScript.missedBeat == true)
@@ -38,6 +44,10 @@ public class Player : MonoBehaviour
         {
             Debug.Log("Hit");
             ConductorScript.playerHit = true;
+        }
+        else if (ConductorScript.currentBeatTime == 1.0f)
+        {
+            Barely();
         }
         else
         {
@@ -62,5 +72,10 @@ public class Player : MonoBehaviour
             //HE DONT MISS NIGGGAAAAA
             Debug.Log("Miss");
         }
+    }
+
+    public void Barely()
+    {
+        Debug.Log("Barely");
     }
 }

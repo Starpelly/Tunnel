@@ -47,6 +47,18 @@ TextureImporter:
   - first:
       213: -7569860737180257377
     second: tunnelsprite_14
+  - first:
+      213: 4339248960006152573
+    second: tunnelsprite_15
+  - first:
+      213: 7762133431427300627
+    second: tunnelsprite_16
+  - first:
+      213: 5454678179077630213
+    second: tunnelsprite_17
+  - first:
+      213: -3800409053030442829
+    second: tunnelsprite_18
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -434,7 +446,7 @@ TextureImporter:
         width: 256
         height: 144
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -442,6 +454,90 @@ TextureImporter:
       bones: []
       spriteID: f93b13134c372f690800000000000000
       internalID: -7569860737180257377
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tunnelsprite_15
+      rect:
+        serializedVersion: 2
+        x: 132
+        y: 1548
+        width: 64
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: d71662550fb183c30800000000000000
+      internalID: 4339248960006152573
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tunnelsprite_16
+      rect:
+        serializedVersion: 2
+        x: 198
+        y: 1548
+        width: 64
+        height: 16
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 31d7867fa33a8bb60800000000000000
+      internalID: 7762133431427300627
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tunnelsprite_17
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 1594
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5092ffb57e8e2bb40800000000000000
+      internalID: 5454678179077630213
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tunnelsprite_18
+      rect:
+        serializedVersion: 2
+        x: 36
+        y: 1594
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3b811f80a1c324bc0800000000000000
+      internalID: -3800409053030442829
       vertices: []
       indices: 
       edges: []
