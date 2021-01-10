@@ -44,12 +44,18 @@ public class Conductor : MonoBehaviour
 
     public bool canMiss = false;
 
+    public bool canCount = true;
+
+    public Player player;
+
     //private bool onBeat;
 
     //DELETE THESE COMMENTS
 
     public delegate void Beat();
     public static event Beat BeatEvent;
+
+    public int tunnelBeats;
 
     void Awake()
     {
@@ -93,7 +99,7 @@ public class Conductor : MonoBehaviour
             Debug.Log(songPosBeat);
         }
 
-        songPosBeat = (float)songPositionInBeats / 4;
+        //songPosBeat = (float)songPositionInBeats / 4;
 
         if (onBeat)
         {
@@ -108,7 +114,16 @@ public class Conductor : MonoBehaviour
         {
             if (songPosBeat == 10.0)
             {
+                player.canBarely = true;
                 canMiss = true;
+            }
+        }
+
+        if (onBeat)
+        {
+            if (songPosBeat == 150)
+            {
+                songPosBeat = 25f;
             }
         }
     }
@@ -150,13 +165,27 @@ public class Conductor : MonoBehaviour
             times = 0;
             FullBeat();
         }
+
+        if (times == 2)
+        {
+            player.tapsinBeat = 0;
+        }
         //Debug.Log("beat");
-        //songPosBeat += 0.25f; //DONT USE THIS IT COULD GO OUTTA SYNC
+        if (canCount == true)
+        {
+            songPosBeat += 0.25f; //DONT USE THIS IT COULD GO OUTTA SYNC
+        }
     }
 
     public void FullBeat()
     {
         //BeatEvent();
+        tunnelBeats += 1;
+        if (tunnelBeats == 18)
+        {
+            tunnelBeats = 1;
+            songPosBeat = 25.0f;
+        }
         //Debug.Log("beat");
         onPlayerBeat = true;
         if (metronome == true)

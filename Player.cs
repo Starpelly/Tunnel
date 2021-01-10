@@ -12,8 +12,17 @@ public class Player : MonoBehaviour
 
     public Conductor ConductorScript;
 
+    public Animator girlAnim;
+
+    public Events eventScript;
+
+    public bool canBarely;
+    public int tapsinBeat;
+
     [SerializeField]
     public bool canInput;
+
+    public bool canTap = false;
 
     private void Start()
     {
@@ -40,14 +49,30 @@ public class Player : MonoBehaviour
 
     public void OnTap()
     {
+        tapsinBeat += 1;
+        if (tapsinBeat == 2)
+        {
+            Miss();
+        }
         if (ConductorScript.currentBeatTime > 0.50)
         {
-            Debug.Log("Hit");
+            //Debug.Log("Hit");
+            eventScript.Hit();
             ConductorScript.playerHit = true;
         }
-        else if (ConductorScript.currentBeatTime == 1.0f)
+        else if (ConductorScript.currentBeatTime == 0.75f)
         {
-            Barely();
+            if (canBarely == true)
+            {
+                Barely();
+            }
+        }
+        else if (ConductorScript.currentBeatTime == 0.25)
+        {
+            if (canBarely == true)
+            {
+                Barely();
+            }
         }
         else
         {
@@ -70,12 +95,12 @@ public class Player : MonoBehaviour
         {
             tunnelScript.OnMiss();
             //HE DONT MISS NIGGGAAAAA
-            Debug.Log("Miss");
+            //Debug.Log("Miss");
         }
     }
 
     public void Barely()
     {
-        Debug.Log("Barely");
+        eventScript.Barely();
     }
 }

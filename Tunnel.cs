@@ -7,15 +7,20 @@ public class Tunnel : MonoBehaviour
 
     [Header("Scripts")]
     public Player player;
+    public Conductor ConductorScript;
+    public Events eventScript;
 
 
     [Header("Everything Else")]
     public AudioSource song;
     public Background background;
+    public Background tunnel;
+    public Stopwatch stopwatch;
 
     [Header("Animations")]
     public Animator animGame;
     public Animator girlArmsAnim;
+    public Animator girlAnim;
 
     [Header("Sprites")]
     public SpriteRenderer girl;
@@ -29,10 +34,21 @@ public class Tunnel : MonoBehaviour
 
     public void OnMiss()
     {
-        animGame.Play("GameMiss");
+        ConductorScript.canCount = false;
+        stopwatch.isOn = false;
+        if (eventScript.inTunnel == false)
+        {
+            animGame.Play("GameMiss");
+        }
+        else
+        {
+            animGame.Play("GameMissTunnel");
+        }
         girlArmsAnim.speed = 0;
+        girlAnim.enabled = false;
         miss = true;
-        background.speed = 0;
+        background.enabled = false;
+        tunnel.enabled = false;
         player.canInput = false;
     }
 

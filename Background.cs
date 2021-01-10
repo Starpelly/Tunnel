@@ -11,4 +11,9 @@ public class Background : MonoBehaviour
     {
         bgRenderer.material.mainTextureOffset += new Vector2(speed * Time.deltaTime, 0f);
     }
+
+    public void Disable()
+    {
+        gameObject.SetActive(false);
+    }
 }

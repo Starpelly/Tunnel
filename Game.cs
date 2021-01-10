@@ -12,6 +12,7 @@ public class Game : MonoBehaviour
 
     [Header("Sound Manager")]
     public AudioSource sfx;
+    public AudioSource wind;
 
     [Header("Animations")]
     public GameObject gameOverObj;
@@ -49,6 +50,7 @@ public class Game : MonoBehaviour
 
     public void GameOverScreen()
     {
+        wind.enabled = false;
         sfx.PlayOneShot(gameEndSnd);
         gameOverObj.SetActive(true);
     }
